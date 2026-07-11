@@ -1,0 +1,13 @@
+## charts.html - Mako template displaying the charts
+
+<%page args="plotlist"/>
+
+    <div>
+      % if plotlist:
+          % for plotstring in plotlist:
+              <div>${plotstring|n}</div>
+          % endfor
+      % else:
+        <p>No data yet: Waiting..</p>
+      % endif
+    </div>

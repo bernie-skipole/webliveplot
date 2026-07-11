@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${pagetitle|h}</title>
+<script src="static/htmx.min.js"></script>
+<script src="static/sse.js"></script>
+<link rel="stylesheet" href="static/normalize.css" type="text/css">
+<link rel="stylesheet" href="static/sakura.css" type="text/css">
+<body>
+
+<div hx-ext="sse" sse-connect="check">
+  <div hx-get="getchart" hx-trigger="sse:update" hx-target=this>
+
+    <%include file="charts.html" args="plotlist=plotlist"/>
+ 
+  </div>
+</div>
+
+</body>
+</html>
